@@ -1,0 +1,32 @@
+matr = [[],[],[]]
+for i in xrange(3):
+    elem = raw_input("enter element's of first raw ")
+    if elem.isdigit():
+        elem1 = int(elem)
+        matr[0].append(elem1)
+    else: 
+        print "Sorry, but your input is not a number, programm will stop"
+        break
+for i in xrange(3):
+    elem = raw_input("enter element's of second raw ")
+    if elem.isdigit():
+        elem1 = int(elem)
+        matr[1].append(elem1)
+    else: 
+        print "Sorry, but your input is not a number, programm will stop"
+        break
+for i in xrange(3):
+    elem = raw_input("enter element's of third raw ")
+    if elem.isdigit():
+        elem1 = int(elem)
+        matr[2].append(elem1)
+    else: 
+        print "Sorry, but your input is not a number, programm will stop"
+        break
+def matr_count():    
+    a = matr[0][0]*(matr[1][1]*matr[2][2]-matr[2][1]*matr[1][2])
+    b = matr[0][1]*(matr[1][0]*matr[2][2]-matr[2][0]*matr[1][2])
+    c = matr[0][2]*(matr[1][0]*matr[2][1]-matr[2][0]*matr[1][1])
+    print (a-b+c)
+
+matr_count()
