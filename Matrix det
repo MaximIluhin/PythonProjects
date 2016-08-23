@@ -1,30 +1,42 @@
-matr = [[],[],[]]
-for i in range(9):
-    elem = input("enter element's of first, second and third raw ")
-    if elem.lstrip("-").isdigit() and i<3:
-        elem1 = int(elem)
-        matr[0].append(elem1)
-    elif elem.lstrip("-").isdigit() and i>2 and i<6:
-        elem1 = int(elem)
-        matr[1].append(elem1)
-    elif elem.lstrip("-").isdigit() and i>5:
-        elem1 = int(elem)
-        matr[2].append(elem1)
-    else: 
-        print ("Sorry, but your input is not a number, programm will stop")
-        break
+def matrix_input(self):
+    matr = [[],[],[]]
+    for i in range(9):
+        elem = input("enter element's of first, second and third raw ")
+        if elem.lstrip("-").isdigit() and i<3:
+            elem1 = int(elem)
+            matr[0].append(elem1)
+        elif elem.lstrip("-").isdigit() and i>2 and i<6:
+            elem1 = int(elem)
+            matr[1].append(elem1)
+        elif elem.lstrip("-").isdigit() and i>5:
+            elem1 = int(elem)
+            matr[2].append(elem1)
+        else: 
+            print ("Sorry, but your input is not a number, programm will stop")
+            break
+    return matr
 class Matrix_operations():    
-    def matr_count(self):    
+    def matr_count(self): 
+        matr = matrix_input(self)
         a = matr[0][0]*(matr[1][1]*matr[2][2]-matr[2][1]*matr[1][2])
         b = matr[0][1]*(matr[1][0]*matr[2][2]-matr[2][0]*matr[1][2])
         c = matr[0][2]*(matr[1][0]*matr[2][1]-matr[2][0]*matr[1][1])
         print (a-b+c)
         
     def matr_transposition(self):
+        matr = matrix_input(self)
         matr1 = [[],[],[]]
         for j in range(3):    
             for i in range(3):
                 matr1[j].append(matr[i][j])
+        for i in range(len(matr1)):
+            print (matr1[i])
+    
+    def matr_multiplication(self):
+        matr2 = [[],[],[]]
+        matr = matrix_input(self)
+        print (matr)
+        matr1 = matrix_input(self)
         print (matr1)
         
 var = Matrix_operations()
@@ -34,5 +46,7 @@ if inp == "det":
     var.matr_count()
 elif inp == "trans":
     var.matr_transposition()
+elif inp == "multi":
+    var.matr_multiplication()
 else: 
     print ("Sorry, operation not supported")
