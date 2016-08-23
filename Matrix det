@@ -1,23 +1,13 @@
 matr = [[],[],[]]
-for i in xrange(3):
-    elem = raw_input("enter element's of first raw ")
-    if elem.isdigit():
+for i in xrange(9):
+    elem = raw_input("enter element's of first, second and third raw ")
+    if elem.isdigit() and i<3:
         elem1 = int(elem)
         matr[0].append(elem1)
-    else: 
-        print "Sorry, but your input is not a number, programm will stop"
-        break
-for i in xrange(3):
-    elem = raw_input("enter element's of second raw ")
-    if elem.isdigit():
+    elif elem.isdigit() and i>2 and i<6:
         elem1 = int(elem)
         matr[1].append(elem1)
-    else: 
-        print "Sorry, but your input is not a number, programm will stop"
-        break
-for i in xrange(3):
-    elem = raw_input("enter element's of third raw ")
-    if elem.isdigit():
+    elif elem.isdigit() and i>5:
         elem1 = int(elem)
         matr[2].append(elem1)
     else: 
