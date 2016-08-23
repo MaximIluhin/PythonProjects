@@ -1,6 +1,6 @@
 matr = [[],[],[]]
-for i in xrange(9):
-    elem = raw_input("enter element's of first, second and third raw ")
+for i in range(9):
+    elem = input("enter element's of first, second and third raw ")
     if elem.lstrip("-").isdigit() and i<3:
         elem1 = int(elem)
         matr[0].append(elem1)
@@ -11,12 +11,34 @@ for i in xrange(9):
         elem1 = int(elem)
         matr[2].append(elem1)
     else: 
-        print "Sorry, but your input is not a number, programm will stop"
+        print ("Sorry, but your input is not a number, programm will stop")
         break
-def matr_count():    
-    a = matr[0][0]*(matr[1][1]*matr[2][2]-matr[2][1]*matr[1][2])
-    b = matr[0][1]*(matr[1][0]*matr[2][2]-matr[2][0]*matr[1][2])
-    c = matr[0][2]*(matr[1][0]*matr[2][1]-matr[2][0]*matr[1][1])
-    print (a-b+c)
+class Matrix_operations():    
+    def matr_count(self):    
+        a = matr[0][0]*(matr[1][1]*matr[2][2]-matr[2][1]*matr[1][2])
+        b = matr[0][1]*(matr[1][0]*matr[2][2]-matr[2][0]*matr[1][2])
+        c = matr[0][2]*(matr[1][0]*matr[2][1]-matr[2][0]*matr[1][1])
+        print (a-b+c)
+        
+    def matr_transposition(self):
+        matr1 = [[],[],[]]
+        matr1[0].append(matr[0][0])
+        matr1[0].append(matr[1][0])
+        matr1[0].append(matr[2][0])
+        matr1[1].append(matr[0][1])
+        matr1[1].append(matr[1][1])
+        matr1[1].append(matr[2][1])
+        matr1[2].append(matr[0][2])
+        matr1[2].append(matr[1][2])
+        matr1[2].append(matr[2][2])
+        print (matr1)
+        
+var = Matrix_operations()
 
-matr_count()
+inp = input("What do you want to do with your matrix? ")
+if inp == "det":
+    var.matr_count()
+elif inp == "trans":
+    var.matr_transposition()
+else: 
+    print ("Sorry, operation not supported")
