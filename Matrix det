@@ -1,4 +1,3 @@
-
 def matrix_input(self):
     matr = [[],[],[]]
     for i in range(9):
@@ -50,6 +49,31 @@ class Matrix_operations():
         matr2[2].append(matr[2][0]*matr1[0][2]+matr[2][1]*matr1[1][2]+matr[2][2]*matr1[2][2])
         for i in range(len(matr2)):
             print (matr2[i])
+    
+    def matr_sum(self):
+        matr2 = [[],[],[]]
+        matr = matrix_input(self)
+        print (matr)
+        matr1 = matrix_input(self)
+        print (matr1)
+        for i in range(3):
+            for j in range(3):
+                matr2[i].append(matr[i][j]+matr1[i][j])
+        for i in matr2:
+            print (i)
+    
+    def matr_minus(self):
+        matr2 = [[],[],[]]
+        matr = matrix_input(self)
+        print (matr)
+        matr1 = matrix_input(self)
+        print (matr1)
+        for i in range(3):
+            for j in range(3):
+                matr2[i].append(matr[i][j]-matr1[i][j])
+        for i in matr2:
+            print (i)    
+
 var = Matrix_operations()
 
 inp = input("What do you want to do with your matrix? ")
@@ -59,5 +83,9 @@ elif inp == "trans":
     var.matr_transposition()
 elif inp == "multi":
     var.matr_multiplication()
+elif inp == "sum":
+    var.matr_minus()
+elif inp == "minus":
+    var.matr_minus()
 else: 
     print ("Sorry, operation not supported")
